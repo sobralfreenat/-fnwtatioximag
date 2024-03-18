@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planilha de Reunião</title>
     
-    
     <style>
     body {
         font-family: 'Arial', sans-serif;
@@ -35,138 +34,133 @@
         box-sizing: border-box;
     }
 
-    button {
-        background-color: #007BFF;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-right: 10px;
-        transition: background-color 0.3s ease;
-    }
+   
 
-    button:hover {
-        background-color: #0056b3;
-    }
-
-    input[type="file"] {
-        margin-top: 20px;
-    }
-</style>
-
-    
+    </style>
 </head>
 <body>
-
-<form id="formReuniao">
-    <strong>Nome da empresa/cliente:</strong> <input type="text" id="nomeEmpresa"><br>
-    <strong>Data da reunião:</strong> <input type="date" id="dataReuniao"><br>
-    <strong>Horário da reunião:</strong> <input type="time" id="horarioReuniao"><br>
-    <strong>Participantes:</strong> <input type="text" id="participantes" placeholder="Nome1, Nome2..."><br>
-    
-    <h3>Seção Informações</h3>
-    <strong>Abertura e Boas-vindas:</strong> <input type="text" id="aberturaBoasVindas"><br>
-    <strong>Revisão da Pauta:</strong> <input type="text" id="revisaoPauta"><br>
-    <h4>Revisão das Vendas:</h4>
-    - Total pelo cliente (valor e quantidade): <input type="text" id="totalCliente"><br>
-    - Total na plataforma (valor e quantidade): <input type="text" id="totalPlataforma"><br>
-    - Discrepâncias: <textarea id="discrepancias"></textarea><br>
-    <h4>Feedback da Plataforma:</h4>
-    - Desempenho: <textarea id="desempenho"></textarea><br>
-    - Otimizações: <textarea id="otimizacoes"></textarea><br>
-    - Recomendações: <textarea id="recomendacoes"></textarea><br>
-    <h4>Dúvidas do Cliente:</h4>
-    <textarea id="duvidasCliente"></textarea><br>
-    <h4>Atualizações da Plataforma:</h4>
-    - Novas funcionalidades: <textarea id="novasFuncionalidades"></textarea><br>
-    - Mudanças: <textarea id="mudancas"></textarea><br>
-    - Treinamentos: <textarea id="treinamentos"></textarea><br>
-    <h4>Outros Assuntos:</h4>
-    <textarea id="outrosAssuntos"></textarea><br>
-    <h4>Resumo e Próximos Passos:</h4>
-    - Decisões: <textarea id="decisoes"></textarea><br>
-    - Tarefas: <textarea id="tarefas"></textarea><br>
-    - Próxima reunião: <input type="date" id="proximaReuniao"><br>
-    <h4>Comentários e Observações:</h4>
-    <textarea id="comentariosObservacoes"></textarea><br>
-
-    <button type="button" onclick="gerarJSON()">Salvar como JSON</button>
-    <input type="file" id="inputFile" onchange="carregarJSON()">
-    <button type="button" onclick="preencherFormulario()">Carregar JSON</button>
-</form>
-
-<script>
-    function gerarJSON() {
-        let jsonData = {
-            nomeEmpresa: document.getElementById("nomeEmpresa").value,
-            dataReuniao: document.getElementById("dataReuniao").value,
-            horarioReuniao: document.getElementById("horarioReuniao").value,
-            participantes: document.getElementById("participantes").value.split(", "),
-            aberturaBoasVindas: document.getElementById("aberturaBoasVindas").value,
-            revisaoPauta: document.getElementById("revisaoPauta").value,
-            totalCliente: document.getElementById("totalCliente").value,
-            totalPlataforma: document.getElementById("totalPlataforma").value,
-            discrepancias: document.getElementById("discrepancias").value,
-            desempenho: document.getElementById("desempenho").value,
-            otimizacoes: document.getElementById("otimizacoes").value,
-            recomendacoes: document.getElementById("recomendacoes").value,
-            duvidasCliente: document.getElementById("duvidasCliente").value,
-            novasFuncionalidades: document.getElementById("novasFuncionalidades").value,
-            mudancas: document.getElementById("mudancas").value,
-            treinamentos: document.getElementById("treinamentos").value,
-            outrosAssuntos: document.getElementById("outrosAssuntos").value,
-            decisoes: document.getElementById("decisoes").value,
-            tarefas: document.getElementById("tarefas").value,
-            proximaReuniao: document.getElementById("proximaReuniao").value,
-            comentariosObservacoes: document.getElementById("comentariosObservacoes").value
-        };
-
-        let dataStr = JSON.stringify(jsonData);
-        let dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+    <h1></h1><strong>ALINHAMENTO PERIÓDICO</strong><br><br>
+    <form id="formReuniao">
+        <strong>Nome da empresa/cliente:</strong> <input type="text" id="nomeEmpresa"><br>
+        <strong>Data da reunião:</strong> <input type="date" id="dataReuniao"><br>
+        <strong>Horário da reunião:</strong> <input type="time" id="horarioReuniao"><br>
+        <strong>Participantes:</strong> <input type="text" id="participantes" placeholder="Nome1, Nome2..."><br>
         
-        let exportFileDefaultName = 'data.json';
-        
-        let linkElement = document.createElement('a');
-        linkElement.setAttribute('href', dataUri);
-        linkElement.setAttribute('download', exportFileDefaultName);
-        linkElement.click();
-    }
+        <h3>Seção Informações</h3>
+        <strong>Abertura e Boas-vindas:</strong> <input type="text" id="aberturaBoasVindas"><br>
+        <strong>Revisão da Pauta:</strong> <input type="text" id="revisaoPauta"><br>
+        <h4>Revisão das Vendas:</h4>
+        - Total pelo cliente (valor e quantidade): <input type="text" id="totalCliente"><br>
+        - Total na plataforma (valor e quantidade): <input type="text" id="totalPlataforma"><br>
+        - Discrepâncias: <textarea id="discrepancias"></textarea><br>
+        <h4>Feedback da Plataforma:</h4>
+        - Desempenho: <textarea id="desempenho"></textarea><br>
+        - Otimizações: <textarea id="otimizacoes"></textarea><br>
+        - Recomendações: <textarea id="recomendacoes"></textarea><br>
+        <h4>Dúvidas do Cliente:</h4>
+        <textarea id="duvidasCliente"></textarea><br>
+        <h4>Atualizações da Plataforma:</h4>
+        - Novas funcionalidades: <textarea id="novasFuncionalidades"></textarea><br>
+        - Mudanças: <textarea id="mudancas"></textarea><br>
+        - Treinamentos: <textarea id="treinamentos"></textarea><br>
+        <h4>Outros Assuntos:</h4>
+        <textarea id="outrosAssuntos"></textarea><br>
+        <h4>Resumo e Próximos Passos:</h4>
+        - Decisões: <textarea id="decisoes"></textarea><br>
+        - Tarefas: <textarea id="tarefas"></textarea><br>
+        - Próxima reunião: <input type="date" id="proximaReuniao"><br>
+        <h4>Comentários e Observações:</h4>
+        <textarea id="comentariosObservacoes"></textarea><br>
 
-    function carregarJSON() {
-        let file = document.getElementById("inputFile").files[0];
-        let reader = new FileReader();
-        
-        reader.onload = function(event) {
-            let jsonData = JSON.parse(event.target.result);
-            preencherFormulario(jsonData);
-        };
-        reader.readAsText(file);
-    }
+        <div style="text-align: center;">
 
-    function preencherFormulario(data) {
-        document.getElementById("nomeEmpresa").value = data.nomeEmpresa;
-        document.getElementById("dataReuniao").value = data.dataReuniao;
-        document.getElementById("horarioReuniao").value = data.horarioReuniao;
-        document.getElementById("participantes").value = data.participantes.join(", ");
-        document.getElementById("aberturaBoasVindas").value = data.aberturaBoasVindas;
-        document.getElementById("revisaoPauta").value = data.revisaoPauta;
-        document.getElementById("totalCliente").value = data.totalCliente;
-        document.getElementById("totalPlataforma").value = data.totalPlataforma;
-        document.getElementById("discrepancias").value = data.discrepancias;
-        document.getElementById("desempenho").value = data.desempenho;
-        document.getElementById("otimizacoes").value = data.otimizacoes;
-        document.getElementById("recomendacoes").value = data.recomendacoes;
-        document.getElementById("duvidasCliente").value = data.duvidasCliente;
-        document.getElementById("novasFuncionalidades").value = data.novasFuncionalidades;
-        document.getElementById("mudancas").value = data.mudancas;
-        document.getElementById("treinamentos").value = data.treinamentos;
-        document.getElementById("outrosAssuntos").value = data.outrosAssuntos;
-        document.getElementById("decisoes").value = data.decisoes;
-        document.getElementById("tarefas").value = data.tarefas;
-        document.getElementById("proximaReuniao").value = data.proximaReuniao;
-        document.getElementById("comentariosObservacoes").value = data.comentariosObservacoes;
-    }
-</script>
+            
+        </div>
+    </form>
+
+<!-- Botões para salvar e carregar estado -->
+<div style="text-align: center;">
+  <button onclick="salvarEstado()" style="width: 150px; padding: 10px; background-color: #1b0bff; color: rgb(255, 255, 255);">Salvar Estado</button>
+  <input type="file" id="fileInput" style="display: none;" onchange="carregarEstado(event)">
+  <button onclick="document.getElementById('fileInput').click()" style="width: 150px; padding: 10px; background-color: #c22fc7; color: white;">Carregar Estado</button>
+</div>
+
+    <script>
+        function salvarEstado() {
+            let jsonData = {
+                nomeEmpresa: document.getElementById("nomeEmpresa").value,
+                dataReuniao: document.getElementById("dataReuniao").value,
+                horarioReuniao: document.getElementById("horarioReuniao").value,
+                participantes: document.getElementById("participantes").value.split(", "),
+                aberturaBoasVindas: document.getElementById("aberturaBoasVindas").value,
+                revisaoPauta: document.getElementById("revisaoPauta").value,
+                totalCliente: document.getElementById("totalCliente").value,
+                totalPlataforma: document.getElementById("totalPlataforma").value,
+                discrepancias: document.getElementById("discrepancias").value,
+                desempenho: document.getElementById("desempenho").value,
+                otimizacoes: document.getElementById("otimizacoes").value,
+                recomendacoes: document.getElementById("recomendacoes").value,
+                duvidasCliente: document.getElementById("duvidasCliente").value,
+                novasFuncionalidades: document.getElementById("novasFuncionalidades").value,
+                mudancas: document.getElementById("mudancas").value,
+                treinamentos: document.getElementById("treinamentos").value,
+                outrosAssuntos: document.getElementById("outrosAssuntos").value,
+                decisoes: document.getElementById("decisoes").value,
+                tarefas: document.getElementById("tarefas").value,
+                proximaReuniao: document.getElementById("proximaReuniao").value,
+                comentariosObservacoes: document.getElementById("comentariosObservacoes").value
+            };
+
+            let fileName = prompt("Por favor, insira o nome do arquivo:");
+            if (fileName) {
+                let dataStr = JSON.stringify(jsonData);
+                let blob = new Blob([dataStr], { type: 'application/json' });
+                let url = URL.createObjectURL(blob);
+                
+                let linkElement = document.createElement('a');
+                linkElement.setAttribute('href', url);
+                linkElement.setAttribute('download', fileName + '.json');
+                linkElement.style.display = 'none';
+                document.body.appendChild(linkElement);
+                linkElement.click();
+                document.body.removeChild(linkElement);
+            }
+        }
+
+        function carregarEstado(event) {
+            let file = event.target.files[0];
+            let reader = new FileReader();
+            
+            reader.onload = function(event) {
+                let jsonData = JSON.parse(event.target.result);
+                preencherFormulario(jsonData);
+            };
+            reader.readAsText(file);
+        }
+
+        function preencherFormulario(data) {
+            document.getElementById("nomeEmpresa").value = data.nomeEmpresa;
+            document.getElementById("dataReuniao").value = data.dataReuniao;
+            document.getElementById("horarioReuniao").value = data.horarioReuniao;
+            document.getElementById("participantes").value = data.participantes.join(", ");
+            document.getElementById("aberturaBoasVindas").value = data.aberturaBoasVindas;
+            document.getElementById("revisaoPauta").value = data.revisaoPauta;
+            document.getElementById("totalCliente").value = data.totalCliente;
+            document.getElementById("totalPlataforma").value = data.totalPlataforma;
+            document.getElementById("discrepancias").value = data.discrepancias;
+            document.getElementById("desempenho").value = data.desempenho;
+            document.getElementById("otimizacoes").value = data.otimizacoes;
+            document.getElementById("recomendacoes").value = data.recomendacoes;
+            document.getElementById("duvidasCliente").value = data.duvidasCliente;
+            document.getElementById("novasFuncionalidades").value = data.novasFuncionalidades;
+            document.getElementById("mudancas").value = data.mudancas;
+            document.getElementById("treinamentos").value = data.treinamentos;
+            document.getElementById("outrosAssuntos").value = data.outrosAssuntos;
+            document.getElementById("decisoes").value = data.decisoes;
+            document.getElementById("tarefas").value = data.tarefas;
+            document.getElementById("proximaReuniao").value = data.proximaReuniao;
+            document.getElementById("comentariosObservacoes").value = data.comentariosObservacoes;
+        }
+    </script>
 </body>
 </html>
